@@ -18,7 +18,8 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
+  password: <%= ENV["CRYPTO_ALERTER_DATABASE_PASSWORD"] %>
+  username: <%= ENV["CRYPTO_ALERTER_DATABASE_USER"] %>
 
 development:
   <<: *default
@@ -82,8 +83,6 @@ production:
   primary: &primary_production
     <<: *default
     database: crypto_alerter_production
-    username: crypto_alerter
-    password: <%= ENV["CRYPTO_ALERTER_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: crypto_alerter_production_cache
