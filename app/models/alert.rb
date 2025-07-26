@@ -8,4 +8,6 @@ class Alert < ApplicationRecord
 
   has_many :channel_links, dependent: :destroy
   has_many :email_channels, through: :channel_links, source: :channel, source_type: "EmailChannel"
+
+  def channels = channel_links.includes(:channel).map(&:channel)
 end

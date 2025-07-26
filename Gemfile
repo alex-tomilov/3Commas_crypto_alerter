@@ -69,3 +69,8 @@ gem "tailwindcss-rails", "~> 4.3"
 gem "dotenv-rails", "~> 3.1"
 
 gem "formtastic", "~> 5.0"
+
+gem "faye-websocket", "~> 0.12.0"
+
+gem "redis", "~> 5.4"
+gem "sidekiq", "~> 8.0"
