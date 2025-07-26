@@ -1,0 +1,2 @@
+module EmailChannelsHelper
+end
