@@ -1,15 +1,9 @@
-<%= form_with(model: alert, class: "contents") do |form| %>
-  <% if alert.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
-      <h2><%= pluralize(alert.errors.count, "error") %> prohibited this alert from being saved:</h2>
+<%= semantic_form_for(alert, class: "contents") do |form| %>
+  <%= form.semantic_errors :alert %>
 
-      <ul class="list-disc ml-6">
-        <% alert.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= form.input :symbol, as: :select, collection: Alert::SYMBOLS %>
+  <%= form.input :side, as: :select, collection: Alert.sides %>
+  <%= form.input :price %>
 
   <div class="inline">
     <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
