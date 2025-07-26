@@ -65,3 +65,7 @@ end
 gem "tailwindcss-ruby", "~> 4.1"
 
 gem "tailwindcss-rails", "~> 4.3"
+
+gem "dotenv-rails", "~> 3.1"
+
+gem "formtastic", "~> 5.0"
