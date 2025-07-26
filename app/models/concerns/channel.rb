@@ -4,6 +4,6 @@ module Channel
   included { scope :enabled, -> { where(enabled: true) } }
 
   def notifier
-    "Notifier::#{self.class.name.delete_suffix('Channel')}Notifier".constantize.new(self)
+    "Notifiers::#{self.class.name.delete_suffix('Channel')}Notifier".constantize.new(self)
   end
 end

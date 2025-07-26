@@ -1,6 +1,7 @@
 <%= semantic_form_for(email_channel, class: "contents") do |form| %>
   <%= form.semantic_errors :email_channel %>
 
+  <%= form.input :enabled %>
   <%= form.input :email_address %>
 
   <div class="inline">

@@ -65,6 +65,6 @@ class EmailChannelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def email_channel_params
-      params.expect(email_channel: %i[email_address])
+      params.expect(email_channel: %i[enabled email_address])
     end
 end
