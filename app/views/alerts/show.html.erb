@@ -7,9 +7,16 @@
 
   <h1 class="font-bold text-4xl">Showing alert</h1>
 
-  <% @alert.attributes.each do |k, v| %>
-    <p><%= "#{k.humanize}: #{v}" %></p>
-  <% end %>
+  <p>Symbol: <%= @alert.symbol %></p>
+  <p>Side: <%= @alert.side %></p>
+  <p>Price: <%= @alert.price %></p>
+
+  <h2 class="font-bold text-2xl mt-5">Notification Channels</h2>
+  <ul>
+    <% @alert.email_channels.each do |channel| %>
+      <li><%= channel.email_address %></li>
+    <% end %>
+  </ul>
 
   <%= link_to "Edit this alert", edit_alert_path(@alert), class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
   <%= link_to "Back to alerts", alerts_path, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
