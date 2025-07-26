@@ -23,7 +23,7 @@ This application allows users to create cryptocurrency price alerts and receive 
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/atomilov/crypto_alerter.git
+    git clone https://github.com/alex-tomilov/3Commas_crypto_alerter.git
     cd crypto_alerter
     ```
 
