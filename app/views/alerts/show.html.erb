@@ -13,8 +13,11 @@
 
   <h2 class="font-bold text-2xl mt-5">Notification Channels</h2>
   <ul>
-    <% @alert.email_channels.each do |channel| %>
-      <li><%= channel.email_address %></li>
+    <% @alert.email_channels.find_each do |channel| %>
+      <li>Email: <%= channel.email_address %></li>
+    <% end %>
+    <% @alert.telegram_channels.find_each do |channel| %>
+      <li>Telegram: <%= channel.name %> (<%= channel.chat_id %>)</li>
     <% end %>
   </ul>
 

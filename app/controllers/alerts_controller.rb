@@ -65,6 +65,6 @@ class AlertsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def alert_params
-      params.require(:alert).permit(:symbol, :side, :price, email_channel_ids: [])
+      params.require(:alert).permit(:symbol, :side, :price, email_channel_ids: [], telegram_channel_ids: [])
     end
 end

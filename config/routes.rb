@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => "/sidekiq"
 
   resources :email_channels
+  resources :telegram_channels
   resources :alerts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
