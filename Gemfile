@@ -74,3 +74,5 @@ gem "faye-websocket", "~> 0.12.0"
 
 gem "redis", "~> 5.4"
 gem "sidekiq", "~> 8.0"
+
+gem "faraday", "~> 2.13"

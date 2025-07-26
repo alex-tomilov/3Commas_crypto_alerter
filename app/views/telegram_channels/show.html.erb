@@ -1,0 +1,24 @@
+<% content_for :title, "Showing telegram channel" %>
+
+<div class="md:w-2/3 w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <h1 class="font-bold text-4xl">Showing telegram channel</h1>
+
+  <p>Name: <%= @telegram_channel.name %></p>
+  <p>Chat ID: <%= @telegram_channel.chat_id %></p>
+  <p>Enabled: <%= @telegram_channel.enabled? %></p>
+
+  <h2 class="font-bold text-2xl mt-5">Associated Alerts</h2>
+  <ul>
+    <% @telegram_channel.alerts.each do |alert| %>
+      <li><%= link_to "#{alert.symbol} #{alert.side} #{alert.price}", alert_path(alert) %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Edit this telegram channel", edit_telegram_channel_path(@telegram_channel), class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+  <%= link_to "Back to telegram channels", telegram_channels_path, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+  <%= button_to "Destroy this telegram channel", @telegram_channel, method: :delete, form_class: "sm:inline-block mt-2 sm:mt-0 sm:ml-2", class: "w-full rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { turbo_confirm: "Are you sure?" } %>
+</div>
